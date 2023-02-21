@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        {% for row in board %}
+            <div class="row">
+                {% for tile in row %}
+                    {% if tile == 'dark' %}
+                        <div {{color1}}></div>
+                    {% endif %}
+                    {% if tile == 'light' %}
+                        <div {{color2}}></div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
